@@ -23,8 +23,7 @@
         android:text="Start"
         android:id="@+id/buttonStart"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/salutation"
-        android:layout_alignEnd="@+id/salutation" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="100dp"

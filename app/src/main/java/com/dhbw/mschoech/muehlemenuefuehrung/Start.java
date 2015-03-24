@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class Start extends ActionBarActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class Start extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        intPlayer.putExtra("Mode", "1");
                         startActivity(intPlayer);
                     }
                 }
@@ -35,6 +37,7 @@ public class Start extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        intPlayer.putExtra("Mode", "0");
                         startActivity(intPlayer);
                     }
                 }
