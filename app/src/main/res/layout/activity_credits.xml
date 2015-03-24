@@ -76,4 +76,26 @@
         android:layout_alignLeft="@+id/credMS"
         android:layout_alignStart="@+id/credMS" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Special Thanks to:"
+        android:id="@+id/textSchleim1"
+        android:layout_above="@+id/buttonBack"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="98dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Prof. C. Riewertz"
+        android:id="@+id/textSchleim2"
+        android:layout_alignTop="@+id/textSchleim1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
+
 </RelativeLayout>
