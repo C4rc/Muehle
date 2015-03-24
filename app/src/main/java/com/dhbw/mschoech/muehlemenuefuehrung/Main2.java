@@ -18,16 +18,16 @@ public class Main extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button butStart   = (Button) findViewById(R.id.buttonStart);
+        final Button butStart = (Button) findViewById(R.id.buttonStart);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
 
-        final Intent intStart   = new Intent(this, Start.class);
+        final Intent intStart = new Intent(this, Start.class);
         final Intent intOptions = new Intent(this, Options.class);
         final Intent intCredits = new Intent(this, Credits.class);
 
         butStart.setOnClickListener(
-                new Button.OnClickListener(){
+                new Button.OnClickListener() {
 
                     public void onClick(View v) {
                         startActivity(intStart);
@@ -36,7 +36,7 @@ public class Main extends ActionBarActivity {
         );
 
         butOptions.setOnClickListener(
-                new Button.OnClickListener(){
+                new Button.OnClickListener() {
 
                     public void onClick(View v) {
                         startActivity(intOptions);
@@ -45,7 +45,7 @@ public class Main extends ActionBarActivity {
         );
 
         butCredits.setOnClickListener(
-                new Button.OnClickListener(){
+                new Button.OnClickListener() {
 
                     public void onClick(View v) {
                         startActivity(intCredits);
@@ -53,7 +53,6 @@ public class Main extends ActionBarActivity {
                 }
         );
     }
-
 
 
     @Override

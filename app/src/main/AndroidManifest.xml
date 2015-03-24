@@ -28,6 +28,12 @@
             android:name=".Start"
             android:label="@string/title_activity_start" >
         </activity>
+        <activity
+            android:name=".Player"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>

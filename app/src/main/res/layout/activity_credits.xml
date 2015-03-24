@@ -13,18 +13,28 @@
         android:text="Credits"
         android:id="@+id/textCredits"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Producer"
+        android:id="@+id/textProducer"
+        android:layout_below="@+id/textCredits"
+        android:layout_toRightOf="@+id/credLV"
+        android:layout_toEndOf="@+id/credLV"
+        android:layout_marginTop="32dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Christine Krüger"
         android:id="@+id/credCK"
-        android:layout_below="@+id/textCredits"
-        android:layout_toLeftOf="@+id/textCredits"
-        android:layout_toStartOf="@+id/textCredits"
-        android:layout_marginTop="43dp" />
+        android:layout_below="@+id/textProducer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Special Thanks to:"
+        android:text="Additional Thanks to:"
         android:id="@+id/textSchleim1"
         android:layout_above="@+id/buttonBack"
         android:layout_alignParentLeft="true"
@@ -91,11 +101,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Prof. C. Riewertz"
+        android:text="Prof. Christoph Riewertz"
         android:id="@+id/textSchleim2"
         android:layout_alignTop="@+id/textSchleim1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Special Thanks to:"
+        android:id="@+id/textSchleim3"
+        android:layout_below="@+id/textSchleim2"
+        android:layout_alignLeft="@+id/textSchleim2"
+        android:layout_alignStart="@+id/textSchleim2"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Florian Schwarz I. KCB"
+        android:id="@+id/textSchleim4"
+        android:layout_below="@+id/textSchleim3"
+        android:layout_alignLeft="@+id/textSchleim3"
+        android:layout_alignStart="@+id/textSchleim3" />
+
 
 </RelativeLayout>

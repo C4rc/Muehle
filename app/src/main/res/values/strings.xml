@@ -6,4 +6,8 @@
     <string name="title_activity_credits">Credits</string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_start">Start</string>
+
+    <string name="title_activity_player">Player</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
