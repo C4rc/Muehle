@@ -9,22 +9,18 @@ import android.view.View;
 import android.widget.*;
 
 
-public class Main extends ActionBarActivity {
-
-    EditText usrName;
+public class Credits extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_credits);
 
-        final Button butStart   = (Button) findViewById(R.id.buttonStart);
-        final Button butOptions = (Button) findViewById(R.id.buttonOptions);
-        final Button butCredits = (Button) findViewById(R.id.buttonCredits);
+        final Button butBack = (Button) findViewById(R.id.buttonBack);
 
-        final Intent intent     = new Intent(this, Credits.class);
+        final Intent intent     = new Intent(this, Main.class);
 
-        butCredits.setOnClickListener(
+        butBack.setOnClickListener(
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
@@ -35,11 +31,10 @@ public class Main extends ActionBarActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_credits, menu);
         return true;
     }
 

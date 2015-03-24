@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.dhbw.mschoech.muehlemenuefuehrung.Credits">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Credits"
+        android:id="@+id/textCredits"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Christine Krüger"
+        android:id="@+id/credCK"
+        android:layout_below="@+id/textCredits"
+        android:layout_toLeftOf="@+id/textCredits"
+        android:layout_toStartOf="@+id/textCredits"
+        android:layout_marginTop="43dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Dat Roeder"
+        android:id="@+id/credDR"
+        android:layout_below="@+id/credCK"
+        android:layout_alignLeft="@+id/credCK"
+        android:layout_alignStart="@+id/credCK" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Lucas Vorpahl"
+        android:id="@+id/credLV"
+        android:layout_below="@+id/credDR"
+        android:layout_alignLeft="@+id/credDR"
+        android:layout_alignStart="@+id/credDR" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Marc Schoechlin"
+        android:id="@+id/credMS"
+        android:layout_below="@+id/credLV"
+        android:layout_alignLeft="@+id/credLV"
+        android:layout_alignStart="@+id/credLV" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurück"
+        android:id="@+id/buttonBack"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
