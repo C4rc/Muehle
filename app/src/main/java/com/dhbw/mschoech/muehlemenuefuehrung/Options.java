@@ -17,9 +17,7 @@ public class Options extends ActionBarActivity {
         setContentView(R.layout.activity_options);
 
         final Button butBack = (Button) findViewById(R.id.buttonBack);
-
         final Intent intent     = new Intent(this, Main.class);
-
         butBack.setOnClickListener(
                 new Button.OnClickListener(){
 
