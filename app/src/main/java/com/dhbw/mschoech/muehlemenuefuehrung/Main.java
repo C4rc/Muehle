@@ -22,13 +22,33 @@ public class Main extends ActionBarActivity {
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
 
-        final Intent intent     = new Intent(this, Credits.class);
+        final Intent intStart   = new Intent(this, Start.class);
+        final Intent intOptions = new Intent(this, Options.class);
+        final Intent intCredits = new Intent(this, Credits.class);
+
+        butStart.setOnClickListener(
+                new Button.OnClickListener(){
+
+                    public void onClick(View v) {
+                        startActivity(intStart);
+                    }
+                }
+        );
+
+        butOptions.setOnClickListener(
+                new Button.OnClickListener(){
+
+                    public void onClick(View v) {
+                        startActivity(intOptions);
+                    }
+                }
+        );
 
         butCredits.setOnClickListener(
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
-                        startActivity(intent);
+                        startActivity(intCredits);
                     }
                 }
         );
