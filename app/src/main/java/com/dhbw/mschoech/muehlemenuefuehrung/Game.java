@@ -9,28 +9,37 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class Options extends ActionBarActivity {
+public class Game extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_options);
+        setContentView(R.layout.activity_game);
 
-        Intent intent = getIntent();
-        final String source = intent.getStringExtra("source");
-        final Button butBack = (Button) findViewById(R.id.buttonBack);
-System.out.println(source);
-        if( source.equals("main")){
-            intent = new Intent(this, Main.class);
-        }else if ( source.equals("game")){
-            intent = new Intent(this, Game.class);
-        }
-        final Intent finalIntent = intent;
-        butBack.setOnClickListener(
+        final Button butHome = (Button) findViewById(R.id.buttonHome);
+        final Button butOptions = (Button) findViewById(R.id.buttonOptions);
+        final Button butUndo = (Button) findViewById(R.id.buttonUndo);
+        final Button butRedo = (Button) findViewById(R.id.buttonRedo);
+        final Button butEnd = (Button) findViewById(R.id.buttonEnd);
+
+        final Intent intHome = new Intent(this, Main.class);
+        final Intent intOptions = new Intent(this, Options.class);
+
+        butHome.setOnClickListener(
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
-                        startActivity(finalIntent);
+                        startActivity(intHome);
+                    }
+                }
+        );
+
+        butOptions.setOnClickListener(
+                new Button.OnClickListener(){
+
+                    public void onClick(View v) {
+                        intOptions.putExtra("source", "game");
+                        startActivity(intOptions);
                     }
                 }
         );
@@ -40,7 +49,7 @@ System.out.println(source);
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_options, menu);
+        getMenuInflater().inflate(R.menu.menu_game, menu);
         return true;
     }
 

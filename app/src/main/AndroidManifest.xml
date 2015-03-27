@@ -32,6 +32,14 @@
             android:name=".Player"
             android:label="@string/title_activity_player" >
         </activity>
+        <activity
+            android:name=".Fields"
+            android:label="@string/title_activity_fields" >
+        </activity>
+        <activity
+            android:name=".Game"
+            android:label="@string/title_activity_game" >
+        </activity>
     </application>
 
 </manifest>

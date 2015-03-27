@@ -21,7 +21,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:id="@+id/buttonStart"
+        android:id="@+id/buttonFields"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -30,9 +30,9 @@
         android:layout_height="wrap_content"
         android:text="Optionen"
         android:id="@+id/buttonOptions"
-        android:layout_below="@+id/buttonStart"
-        android:layout_alignLeft="@+id/buttonStart"
-        android:layout_alignStart="@+id/buttonStart" />
+        android:layout_below="@+id/buttonFields"
+        android:layout_alignLeft="@+id/buttonFields"
+        android:layout_alignStart="@+id/buttonFields" />
 
     <Button
         android:layout_width="100dp"

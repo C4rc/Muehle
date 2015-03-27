@@ -18,7 +18,7 @@ public class Main extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button butStart = (Button) findViewById(R.id.buttonStart);
+        final Button butStart = (Button) findViewById(R.id.buttonFields);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
 
@@ -39,6 +39,7 @@ public class Main extends ActionBarActivity {
                 new Button.OnClickListener() {
 
                     public void onClick(View v) {
+                        intOptions.putExtra("source", "main");
                         startActivity(intOptions);
                     }
                 }
