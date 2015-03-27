@@ -7,12 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
 
 public class Fields extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fields);
 
@@ -28,6 +32,15 @@ public class Fields extends ActionBarActivity {
         final String mode = i.getStringExtra("Mode");
         final String player1 = i.getStringExtra("Player1");
         final String player2 = i.getStringExtra("Player2");
+
+        TextView texVersus = (TextView) findViewById(R.id.textVersus);
+
+        if(mode.equals("0")){
+            texVersus.setText(player1 + " vs. Computer");
+        }else{
+            texVersus.setText(player1 + " vs. " + player2);
+        }
+
 
         butBack.setOnClickListener(
                 new Button.OnClickListener(){

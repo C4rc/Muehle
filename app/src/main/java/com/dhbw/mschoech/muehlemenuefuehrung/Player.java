@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
+
 
 public class Player extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
 

@@ -8,11 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
+
 
 public class Options extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
 

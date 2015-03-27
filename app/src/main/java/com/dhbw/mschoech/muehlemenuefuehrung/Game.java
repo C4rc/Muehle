@@ -8,14 +8,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
+
 
 public class Game extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-
+        ActivityRegistry.register(this);
         final Button butHome = (Button) findViewById(R.id.buttonHome);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butUndo = (Button) findViewById(R.id.buttonUndo);
@@ -42,6 +45,18 @@ public class Game extends ActionBarActivity {
                         startActivity(intOptions);
                     }
                 }
+        );
+
+        butEnd.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        switch (v.getId()) {
+                            case R.id.buttonEnd:
+                                ActivityRegistry.finishAll();
+                                break;
+                        }
+                }
+            }
         );
     }
 

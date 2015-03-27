@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
+import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
+
 
 public class Main extends ActionBarActivity {
 
@@ -15,6 +17,7 @@ public class Main extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
