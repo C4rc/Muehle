@@ -35,8 +35,8 @@
         android:ems="10"
         android:id="@+id/inpPlayer2"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/buttonBack"
-        android:layout_toStartOf="@+id/buttonBack" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"

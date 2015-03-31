@@ -18,71 +18,63 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Christine"
+            android:text="PlayerName"
             android:textSize="30dp"
-            android:id="@+id/textView"
+            android:id="@+id/textPlayerTurn"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"/>
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strButOptions"
+            android:id="@+id/buttonOptions"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/buttonHome"
+            android:layout_toEndOf="@+id/buttonHome"
+            android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha" />
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonEnd"
+            android:src="@drawable/abc_ic_clear_mtrl_alpha"
+            android:layout_alignBottom="@+id/textPlayerTurn"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redo"
+            android:id="@+id/buttonRedo"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/buttonUndo"
+            android:layout_toEndOf="@+id/buttonUndo" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonUndo"
+            android:src="@android:drawable/ic_menu_revert"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strButHome"
+            android:id="@+id/buttonHome"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
     </RelativeLayout>
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strButEnd"
-        android:id="@+id/buttonEnd"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Undo"
-        android:id="@+id/buttonUndo"
-        android:layout_alignTop="@+id/buttonEnd"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Redo"
-        android:id="@+id/buttonRedo"
-        android:layout_alignTop="@+id/buttonUndo"
-        android:layout_toRightOf="@+id/buttonUndo"
-        android:layout_toEndOf="@+id/buttonUndo" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strButHome"
-        android:id="@+id/buttonHome"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/strButOptions"
-        android:id="@+id/buttonOptions"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_above="@+id/buttonEnd"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@android:drawable/ic_menu_revert" />
 
 </RelativeLayout>

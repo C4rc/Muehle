@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
@@ -19,14 +21,24 @@ public class Game extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         ActivityRegistry.register(this);
-        final Button butHome = (Button) findViewById(R.id.buttonHome);
-        final Button butOptions = (Button) findViewById(R.id.buttonOptions);
-        final Button butUndo = (Button) findViewById(R.id.buttonUndo);
-        final Button butRedo = (Button) findViewById(R.id.buttonRedo);
-        final Button butEnd = (Button) findViewById(R.id.buttonEnd);
+
+        final ImageButton butHome = (ImageButton) findViewById(R.id.buttonHome);
+        final ImageButton butOptions = (ImageButton) findViewById(R.id.buttonOptions);
+        final ImageButton butUndo = (ImageButton) findViewById(R.id.buttonUndo);
+        final ImageButton butRedo = (ImageButton) findViewById(R.id.buttonRedo);
+        final ImageButton butEnd = (ImageButton) findViewById(R.id.buttonEnd);
 
         final Intent intHome = new Intent(this, Main.class);
         final Intent intOptions = new Intent(this, Options.class);
+
+        Intent i = getIntent();
+        String player1 = i.getStringExtra("Player 1");
+        String player2 = i.getStringExtra("Player 2");
+
+        //static value
+        TextView texPlayer = (TextView) findViewById(R.id.textPlayerTurn);
+        texPlayer.setText(player1);
+
 
         butHome.setOnClickListener(
                 new Button.OnClickListener(){

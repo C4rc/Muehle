@@ -24,6 +24,7 @@ public class Main extends ActionBarActivity {
         final Button butStart = (Button) findViewById(R.id.buttonFields);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
+        final ImageButton butEnd = (ImageButton) findViewById(R.id.buttonEnd);
 
         final Intent intStart = new Intent(this, Start.class);
         final Intent intOptions = new Intent(this, Options.class);
@@ -53,6 +54,18 @@ public class Main extends ActionBarActivity {
 
                     public void onClick(View v) {
                         startActivity(intCredits);
+                    }
+                }
+        );
+
+        butEnd.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        switch (v.getId()) {
+                            case R.id.buttonEnd:
+                                ActivityRegistry.finishAll();
+                                break;
+                        }
                     }
                 }
         );

@@ -43,4 +43,13 @@
         android:layout_alignLeft="@+id/buttonOptions"
         android:layout_alignStart="@+id/buttonOptions" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonEnd"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/abc_ic_clear_mtrl_alpha" />
+
 </RelativeLayout>

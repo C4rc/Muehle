@@ -1,6 +1,7 @@
 package com.dhbw.mschoech.muehlemenuefuehrung;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +18,7 @@ public class Player extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
@@ -24,8 +26,8 @@ public class Player extends ActionBarActivity {
         //Data from previous page
         Intent intent = getIntent();
         final String mode = intent.getStringExtra("Mode");
-        String retPlayer1 = "Spieler 1";
-        String retPlayer2 = "Spieler 2";
+        String retPlayer1 = "";
+        String retPlayer2 = "";
 
         try{
             retPlayer1 = intent.getStringExtra("Player 1");
@@ -34,6 +36,12 @@ public class Player extends ActionBarActivity {
             retPlayer2 = intent.getStringExtra("Player 2");
         }catch (Exception e){}
 
+        if( retPlayer1 == null){
+            retPlayer1 = "Player 1";
+        }
+        if( retPlayer2 == null){
+            retPlayer2 = "Player 2";
+        }
         final Button butBack    = (Button) findViewById(R.id.buttonBack);
         final Button butFields  = (Button) findViewById(R.id.buttonFields);
         final Intent intFields  = new Intent(this, Fields.class);
@@ -52,13 +60,15 @@ public class Player extends ActionBarActivity {
             texPlayer2.setVisibility(View.INVISIBLE);
         }
 
+        final String finalRetPlayer1 = retPlayer1;
+        final String finalRetPlayer2 = retPlayer2;
         butFields.setOnClickListener(
                 new Button.OnClickListener() {
 
                     public void onClick(View v) {
                         intFields.putExtra("Mode", mode);
-                        intFields.putExtra("Player1", player1.getText().toString());
-                        intFields.putExtra("Player2", player2.getText().toString());
+                        intFields.putExtra("Player 1", finalRetPlayer1);
+                        intFields.putExtra("Player 2", finalRetPlayer2);
                         startActivity(intFields);
                     }
                 }

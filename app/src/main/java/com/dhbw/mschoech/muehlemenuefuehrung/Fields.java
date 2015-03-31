@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
@@ -21,17 +22,17 @@ public class Fields extends ActionBarActivity {
         setContentView(R.layout.activity_fields);
 
         final Button butBack = (Button) findViewById(R.id.buttonBack);
-        final Button butField1 = (Button) findViewById(R.id.buttonField1);
-        final Button butField2 = (Button) findViewById(R.id.buttonField2);
-        final Button butField3 = (Button) findViewById(R.id.buttonField3);
-        final Button butField4 = (Button) findViewById(R.id.buttonField4);
+        final ImageButton butField1 = (ImageButton) findViewById(R.id.buttonField1);
+        final ImageButton butField2 = (ImageButton) findViewById(R.id.buttonField2);
+        final ImageButton butField3 = (ImageButton) findViewById(R.id.buttonField3);
+        final ImageButton butField4 = (ImageButton) findViewById(R.id.buttonField4);
 
         final Intent intPlayer = new Intent(this, Player.class);
         final Intent intField  = new Intent(this, Game.class);
         Intent i = getIntent();
         final String mode = i.getStringExtra("Mode");
-        final String player1 = i.getStringExtra("Player1");
-        final String player2 = i.getStringExtra("Player2");
+        final String player1 = i.getStringExtra("Player 1");
+        final String player2 = i.getStringExtra("Player 2");
 
         TextView texVersus = (TextView) findViewById(R.id.textVersus);
 
@@ -58,6 +59,9 @@ public class Fields extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        System.out.println(player1);
+                        intField.putExtra("Player 1", "TEST");
+                        intField.putExtra("Player 2", player2);
                         startActivity(intField);
                     }
                 }
@@ -66,6 +70,8 @@ public class Fields extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        intField.putExtra("Player 1", player1);
+                        intField.putExtra("Player 2", player2);
                         startActivity(intField);
                     }
                 }
@@ -74,6 +80,8 @@ public class Fields extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        intField.putExtra("Player 1", player1);
+                        intField.putExtra("Player 2", player2);
                         startActivity(intField);
                     }
                 }
@@ -82,6 +90,8 @@ public class Fields extends ActionBarActivity {
                 new Button.OnClickListener(){
 
                     public void onClick(View v) {
+                        intField.putExtra("Player 1", player1);
+                        intField.putExtra("Player 2", player2);
                         startActivity(intField);
                     }
                 }
