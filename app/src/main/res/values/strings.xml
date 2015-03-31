@@ -12,4 +12,43 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_fields">Fields</string>
     <string name="title_activity_game">Game</string>
+
+
+    <string name="credHeadline">Credits</string>
+    <string name="credHeadline2">Producer</string>
+    <string name="cred1">Christine Krüger</string>
+    <string name="cred2">Dat Roeder</string>
+    <string name="cred3">Lucas Vorpahl</string>
+    <string name="cred4">Marc Schoechlin</string>
+    <string name="credAddThx">Additional Thanks to:</string>
+    <string name="credAddThx2">Fr. Prof. Dr. Dr. hon. Google</string>
+    <string name="credSpecThx">Special Thanks to:</string>
+    <string name="credSpecThx2">Prof. Christoph Riewertz</string>
+    <string name="credSpecThx3">Florian Schwarz I. KCB</string>
+
+
+    <string name="strField1">Feld 1</string>
+    <string name="strField2">Feld 2</string>
+    <string name="strField3">Feld 3</string>
+    <string name="strField4">Feld 4</string>
+    <string name="strVersus">Large Text</string>
+
+    <string name="strOpt">Optionen</string>
+    <string name="strCol1"><![CDATA[Farbe 1 & 2]]></string>
+    <string name="strCol2"><![CDATA[FARBE 3 & 4]]></string>
+    <string name="strCol3"><![CDATA[FARBE 5 & 6]]></string>
+    <string name="strPlayer1">Spieler 1</string>
+    <string name="strPlayer2">Spieler 2</string>
+    <string name="strButStart">Start</string>
+    <string name="strPlayerName1">Name Spieler 1:</string>
+    <string name="strPlayerName2">Name Spieler 2</string>
+    <string name="strChooseMode">Wähle Spielmodus</string>
+    <string name="strPvP">Spieler vs. Spieler</string>
+    <string name="strPvC">Spieler vs. Computer</string>
+
+
+    <string name="strButBack">Zurück</string>
+    <string name="strButEnd">Beenden</string>
+    <string name="strButHome">Home</string>
+    <string name="strButOptions">Optionen</string>
 </resources>

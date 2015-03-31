@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Optionen"
+        android:text="@string/strOpt"
         android:id="@+id/textOptionen"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -18,7 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Farbe 1 &amp; 2"
+        android:text="@string/strCol1"
         android:id="@+id/buttonColor1"
         android:layout_below="@+id/textOptionen"
         android:layout_centerHorizontal="true"
@@ -27,7 +27,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FARBE 3 &amp; 4"
+        android:text="@string/strCol2"
         android:id="@+id/buttonColor2"
         android:layout_below="@+id/buttonColor1"
         android:layout_centerHorizontal="true" />
@@ -36,7 +36,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zurück"
+        android:text="@string/strButBack"
         android:id="@+id/buttonBack"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -45,7 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FARBE 5 &amp; 6"
+        android:text="@string/strCol3"
         android:id="@+id/buttonColor3"
         android:layout_below="@+id/buttonColor2"
         android:layout_centerHorizontal="true" />

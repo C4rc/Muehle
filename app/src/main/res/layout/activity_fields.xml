@@ -10,7 +10,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zurück"
+        android:text="@string/strButBack"
         android:id="@+id/buttonBack"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feld 1"
+        android:text="@string/strField1"
         android:id="@+id/buttonField1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -29,7 +29,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feld 2"
+        android:text="@string/strField2"
         android:id="@+id/buttonField2"
         android:layout_alignTop="@+id/buttonField1"
         android:layout_alignParentRight="true"
@@ -38,7 +38,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feld 3"
+        android:text="@string/strField3"
         android:id="@+id/buttonField3"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -47,7 +47,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feld 4"
+        android:text="@string/strField4"
         android:id="@+id/buttonField4"
         android:layout_alignTop="@+id/buttonField3"
         android:layout_alignParentRight="true"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/strVersus"
         android:id="@+id/textVersus"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
