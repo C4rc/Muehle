@@ -51,4 +51,8 @@
     <string name="strButEnd">Beenden</string>
     <string name="strButHome">Home</string>
     <string name="strButOptions">Optionen</string>
+    <string name="strEndPopUp">Beenden</string>
+    <string name="strEndQuestionPopUp">Möchten Sie das Spiel wirklich beenden?</string>
+    <string name="strYesPopUp">JA</string>
+    <string name="strNoPopUp">Nein</string>
 </resources>

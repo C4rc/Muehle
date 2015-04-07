@@ -1,6 +1,8 @@
 package com.dhbw.mschoech.muehlemenuefuehrung;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,10 +23,31 @@ public class Main extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final Button butStart = (Button) findViewById(R.id.buttonFields);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
         final ImageButton butEnd = (ImageButton) findViewById(R.id.buttonEnd);
+        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
+
+        helpBuilder.setTitle(getString(R.string.strEndPopUp));
+        helpBuilder.setMessage(getString(R.string.strEndQuestionPopUp));
+        helpBuilder.setNegativeButton(getString(R.string.strNoPopUp),
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
+                    }
+                });
+        helpBuilder.setPositiveButton(getString(R.string.strYesPopUp),
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityRegistry.finishAll();
+                    }
+                });
+
+        final AlertDialog helpDialog = helpBuilder.create();
 
         final Intent intStart = new Intent(this, Start.class);
         final Intent intOptions = new Intent(this, Options.class);
@@ -60,12 +83,10 @@ public class Main extends ActionBarActivity {
 
         butEnd.setOnClickListener(
                 new Button.OnClickListener(){
+
+
                     public void onClick(View v) {
-                        switch (v.getId()) {
-                            case R.id.buttonEnd:
-                                ActivityRegistry.finishAll();
-                                break;
-                        }
+                        helpDialog.show();
                     }
                 }
         );

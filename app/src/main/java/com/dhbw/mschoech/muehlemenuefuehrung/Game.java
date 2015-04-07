@@ -1,5 +1,7 @@
 package com.dhbw.mschoech.muehlemenuefuehrung;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -31,6 +33,25 @@ public class Game extends ActionBarActivity {
         final Intent intHome = new Intent(this, Main.class);
         final Intent intOptions = new Intent(this, Options.class);
 
+        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
+        helpBuilder.setTitle(getString(R.string.strEndPopUp));
+        helpBuilder.setMessage(getString(R.string.strEndQuestionPopUp));
+        helpBuilder.setNegativeButton(getString(R.string.strNoPopUp),
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
+                    }
+                });
+        helpBuilder.setPositiveButton(getString(R.string.strYesPopUp),
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityRegistry.finishAll();
+                    }
+                });
+
+        final AlertDialog helpDialog = helpBuilder.create();
         Intent i = getIntent();
         String player1 = i.getStringExtra("Player 1");
         String player2 = i.getStringExtra("Player 2");
@@ -60,13 +81,9 @@ public class Game extends ActionBarActivity {
         );
 
         butEnd.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v) {
-                        switch (v.getId()) {
-                            case R.id.buttonEnd:
-                                ActivityRegistry.finishAll();
-                                break;
-                        }
+            new Button.OnClickListener(){
+                public void onClick(View v) {
+                    helpDialog.show();
                 }
             }
         );
