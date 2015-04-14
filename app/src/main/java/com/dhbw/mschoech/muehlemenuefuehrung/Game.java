@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
@@ -55,10 +56,29 @@ public class Game extends ActionBarActivity {
         Intent i = getIntent();
         String player1 = i.getStringExtra("Player 1");
         String player2 = i.getStringExtra("Player 2");
+        final String field = i.getStringExtra("Field");
 
         //static value
         TextView texPlayer = (TextView) findViewById(R.id.textPlayerTurn);
         texPlayer.setText(player1);
+        ImageView imgView1 = (ImageView) findViewById(R.id.gameBackground1);
+        ImageView imgView2 = (ImageView) findViewById(R.id.gameBackground2);
+        ImageView imgView3 = (ImageView) findViewById(R.id.gameBackground3);
+        ImageView imgView4 = (ImageView) findViewById(R.id.gameBackground4);
+System.out.println(">>>>>>>>>>");
+System.out.println(field);
+System.out.println("<<<<<<<<<<<");
+        switch (field) {
+            case "field1": imgView1.setVisibility(View.VISIBLE);
+                break;
+            case "field2": imgView2.setVisibility(View.VISIBLE);
+                break;
+            case "field3": imgView3.setVisibility(View.VISIBLE);
+                break;
+            case "field4": imgView4.setVisibility(View.VISIBLE);
+                break;
+
+        }
 
 
         butHome.setOnClickListener(
@@ -75,6 +95,7 @@ public class Game extends ActionBarActivity {
 
                     public void onClick(View v) {
                         intOptions.putExtra("source", "game");
+                        intOptions.putExtra("Field", field);
                         startActivity(intOptions);
                     }
                 }

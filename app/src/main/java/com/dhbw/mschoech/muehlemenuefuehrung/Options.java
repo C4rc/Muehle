@@ -21,12 +21,15 @@ public class Options extends ActionBarActivity {
 
         Intent intent = getIntent();
         final String source = intent.getStringExtra("source");
+        final String field = intent.getStringExtra("Field");
         final Button butBack = (Button) findViewById(R.id.buttonBack);
 System.out.println(source);
+System.out.println(field);
         if( source.equals("main")){
             intent = new Intent(this, Main.class);
-        }else if ( source.equals("game")){
+        }else if (source.equals("game")) {
             intent = new Intent(this, Game.class);
+            intent.putExtra("Field", field);
         }
         final Intent finalIntent = intent;
         butBack.setOnClickListener(

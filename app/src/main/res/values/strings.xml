@@ -55,4 +55,6 @@
     <string name="strEndQuestionPopUp">Möchten Sie das Spiel wirklich beenden?</string>
     <string name="strYesPopUp">JA</string>
     <string name="strNoPopUp">Nein</string>
+    <string name="test">test</string>
+    <string name="fieldName1">spielbrett1080.png</string>
 </resources>

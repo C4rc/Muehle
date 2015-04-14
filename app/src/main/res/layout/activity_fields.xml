@@ -17,45 +17,49 @@
         android:layout_alignParentEnd="true" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:text="@string/strField1"
         android:id="@+id/buttonField1"
-        android:layout_alignParentTop="true"
+        android:src="@drawable/spielbrett1080"
+        android:layout_below="@+id/textVersus"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
+        android:layout_marginTop="51dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:text="@string/strField2"
         android:id="@+id/buttonField2"
         android:layout_alignTop="@+id/buttonField1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha"/>
+        android:src="@mipmap/ic_launcher"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:text="@string/strField3"
         android:id="@+id/buttonField3"
-        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"
+        android:layout_above="@+id/buttonBack"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha"/>
+        android:layout_marginBottom="31dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:text="@string/strField4"
         android:id="@+id/buttonField4"
         android:layout_alignTop="@+id/buttonField3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha"/>
+        android:src="@mipmap/ic_launcher"
+        android:adjustViewBounds="true" />
 
     <TextView
         android:layout_width="wrap_content"

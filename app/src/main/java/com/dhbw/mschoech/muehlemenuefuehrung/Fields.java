@@ -36,6 +36,7 @@ public class Fields extends ActionBarActivity {
         final String player1 = i.getStringExtra("Player 1");
         final String player2 = i.getStringExtra("Player 2");
 
+
         TextView texVersus = (TextView) findViewById(R.id.textVersus);
 
         if(mode.equals("0")){
@@ -62,8 +63,9 @@ public class Fields extends ActionBarActivity {
 
                     public void onClick(View v) {
                         System.out.println(player1);
-                        intField.putExtra("Player 1", "TEST");
+                        intField.putExtra("Player 1", player1);
                         intField.putExtra("Player 2", player2);
+                        intField.putExtra("Field", "field1");
                         startActivity(intField);
                     }
                 }
@@ -74,6 +76,7 @@ public class Fields extends ActionBarActivity {
                     public void onClick(View v) {
                         intField.putExtra("Player 1", player1);
                         intField.putExtra("Player 2", player2);
+                        intField.putExtra("Field", "field2");
                         startActivity(intField);
                     }
                 }
@@ -84,6 +87,7 @@ public class Fields extends ActionBarActivity {
                     public void onClick(View v) {
                         intField.putExtra("Player 1", player1);
                         intField.putExtra("Player 2", player2);
+                        intField.putExtra("Field", "field3");
                         startActivity(intField);
                     }
                 }
@@ -94,6 +98,7 @@ public class Fields extends ActionBarActivity {
                     public void onClick(View v) {
                         intField.putExtra("Player 1", player1);
                         intField.putExtra("Player 2", player2);
+                        intField.putExtra("Field", "field4");
                         startActivity(intField);
                     }
                 }
