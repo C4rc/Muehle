@@ -25,6 +25,11 @@ public class Game extends ActionBarActivity {
         setContentView(R.layout.activity_game);
         ActivityRegistry.register(this);
 
+        start();
+
+    }
+
+    private void start(){
         final ImageButton butHome = (ImageButton) findViewById(R.id.buttonHome);
         final ImageButton butOptions = (ImageButton) findViewById(R.id.buttonOptions);
         final ImageButton butUndo = (ImageButton) findViewById(R.id.buttonUndo);
@@ -65,9 +70,9 @@ public class Game extends ActionBarActivity {
         ImageView imgView2 = (ImageView) findViewById(R.id.gameBackground2);
         ImageView imgView3 = (ImageView) findViewById(R.id.gameBackground3);
         ImageView imgView4 = (ImageView) findViewById(R.id.gameBackground4);
-System.out.println(">>>>>>>>>>");
-System.out.println(field);
-System.out.println("<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>");
+        System.out.println(field);
+        System.out.println("<<<<<<<<<<<");
         switch (field) {
             case "field1": imgView1.setVisibility(View.VISIBLE);
                 break;
@@ -102,15 +107,13 @@ System.out.println("<<<<<<<<<<<");
         );
 
         butEnd.setOnClickListener(
-            new Button.OnClickListener(){
-                public void onClick(View v) {
-                    helpDialog.show();
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        helpDialog.show();
+                    }
                 }
-            }
         );
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

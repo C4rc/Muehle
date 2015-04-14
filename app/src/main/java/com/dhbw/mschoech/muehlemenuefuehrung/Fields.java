@@ -23,6 +23,11 @@ public class Fields extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fields);
 
+        start();
+
+    }
+
+    private void start(){
         final Button butBack = (Button) findViewById(R.id.buttonBack);
         final ImageButton butField1 = (ImageButton) findViewById(R.id.buttonField1);
         final ImageButton butField2 = (ImageButton) findViewById(R.id.buttonField2);
@@ -105,8 +110,6 @@ public class Fields extends ActionBarActivity {
         );
 
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

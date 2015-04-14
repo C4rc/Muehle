@@ -19,12 +19,20 @@ public class Options extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
 
+        //do shit
+        start();
+
+
+    }
+
+    private void start(){
+
         Intent intent = getIntent();
         final String source = intent.getStringExtra("source");
         final String field = intent.getStringExtra("Field");
         final Button butBack = (Button) findViewById(R.id.buttonBack);
-System.out.println(source);
-System.out.println(field);
+        System.out.println(source);
+        System.out.println(field);
         if( source.equals("main")){
             intent = new Intent(this, Main.class);
         }else if (source.equals("game")) {
@@ -40,9 +48,9 @@ System.out.println(field);
                     }
                 }
         );
+
+
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

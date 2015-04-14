@@ -15,14 +15,20 @@ import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
 public class Main extends ActionBarActivity {
 
-    EditText usrName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //redgister to App-Close function
         ActivityRegistry.register(this);
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        start();
+    }
+
+
+    private void start(){
 
         final Button butStart = (Button) findViewById(R.id.buttonFields);
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
@@ -90,9 +96,8 @@ public class Main extends ActionBarActivity {
                     }
                 }
         );
+
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

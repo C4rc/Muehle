@@ -19,6 +19,11 @@ public class Credits extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
+        start();
+        
+    }
+
+    private void start(){
         final Button butBack = (Button) findViewById(R.id.buttonBack);
 
         final Intent intent     = new Intent(this, Main.class);
@@ -32,7 +37,6 @@ public class Credits extends ActionBarActivity {
                 }
         );
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

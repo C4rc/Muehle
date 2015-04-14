@@ -20,11 +20,16 @@ public class Start extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        final Button butPlayer = (Button) findViewById(R.id.buttonPlayer);
-        final Button butComputer = (Button) findViewById(R.id.buttonComputer);
-        final Button butBack = (Button) findViewById(R.id.buttonBack);
-        final Intent intMain     = new Intent(this, Main.class);
-        final Intent intPlayer     = new Intent(this, Player.class);
+        start();
+    }
+
+    private void start(){
+
+        final Button butPlayer      = (Button) findViewById(R.id.buttonPlayer);
+        final Button butComputer    = (Button) findViewById(R.id.buttonComputer);
+        final Button butBack        = (Button) findViewById(R.id.buttonBack);
+        final Intent intMain        = new Intent(this, Main.class);
+        final Intent intPlayer      = new Intent(this, Player.class);
 
         butPlayer.setOnClickListener(
                 new Button.OnClickListener(){
@@ -55,8 +60,6 @@ public class Start extends ActionBarActivity {
                 }
         );
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

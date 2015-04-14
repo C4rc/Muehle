@@ -23,12 +23,19 @@ public class Player extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
 
+        start();
+
+    }
+
+    private void start(){
+
         //Data from previous page
         Intent intent = getIntent();
         final String mode = intent.getStringExtra("Mode");
         String retPlayer1 = "";
         String retPlayer2 = "";
 
+        //get Player names if returned from Fields page
         try{
             retPlayer1 = intent.getStringExtra("Player 1");
         }catch (Exception e){}
@@ -42,33 +49,38 @@ public class Player extends ActionBarActivity {
         if( retPlayer2 == null){
             retPlayer2 = "Player 2";
         }
+
         final Button butBack    = (Button) findViewById(R.id.buttonBack);
         final Button butFields  = (Button) findViewById(R.id.buttonFields);
         final Intent intFields  = new Intent(this, Fields.class);
         final Intent intStart   = new Intent(this, Start.class);
 
+        //input fields Player Names
         final EditText player1 = (EditText) findViewById(R.id.inpPlayer1);
         final EditText player2 = (EditText) findViewById(R.id.inpPlayer2);
-        final TextView texPlayer2 = (TextView) findViewById(R.id.textPlayer2);
 
+        //output player names
         player1.setText(retPlayer1);
         player2.setText(retPlayer2);
 
-            //mode == 0 means Player vs. Computer
+        //output string, made invisible if PvC
+        final TextView texPlayer2 = (TextView) findViewById(R.id.textPlayer2);
+
+
+
+        //mode == 0 means Player vs. Computer
         if (mode.equals("0")){
             player2.setVisibility(View.INVISIBLE);
             texPlayer2.setVisibility(View.INVISIBLE);
         }
 
-        final String finalRetPlayer1 = retPlayer1;
-        final String finalRetPlayer2 = retPlayer2;
         butFields.setOnClickListener(
                 new Button.OnClickListener() {
 
                     public void onClick(View v) {
                         intFields.putExtra("Mode", mode);
-                        intFields.putExtra("Player 1", finalRetPlayer1);
-                        intFields.putExtra("Player 2", finalRetPlayer2);
+                        intFields.putExtra("Player 1", player1.getText().toString());
+                        intFields.putExtra("Player 2", player2.getText().toString());
                         startActivity(intFields);
                     }
                 }
@@ -82,14 +94,14 @@ public class Player extends ActionBarActivity {
                 }
         );
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_player, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
