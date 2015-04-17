@@ -1,12 +1,14 @@
 package com.dhbw.mschoech.muehlemenuefuehrung;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
@@ -31,6 +33,10 @@ public class Options extends ActionBarActivity {
         final String source = intent.getStringExtra("source");
         final String field = intent.getStringExtra("Field");
         final Button butBack = (Button) findViewById(R.id.buttonBack);
+
+       // final ImageButton imgButton1 = (ImageButton) findViewById(R.id.imageButtonLightToken);
+       // ImageButton imgButton2 = (ImageButton) findViewById(R.id.imageButtonDarkToken);
+
         System.out.println(source);
         System.out.println(field);
         if( source.equals("main")){
@@ -49,6 +55,15 @@ public class Options extends ActionBarActivity {
                 }
         );
 
+        //click listeners for Buttons
+       // imgButton1.setOnClickListener(
+         //       new Button.OnClickListener(){
+
+           //         public void onClick(View v){
+
+             //       }
+              //  }
+       // );
 
     }
     @Override

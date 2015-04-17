@@ -13,7 +13,8 @@
         android:clickable="false"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:id="@+id/layoutGame">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,39 +29,39 @@
 
         <ImageButton
             style="?android:attr/buttonStyleSmall"
+            android:id="@+id/buttonOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/strButOptions"
-            android:id="@+id/buttonOptions"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/buttonHome"
             android:layout_toEndOf="@+id/buttonHome"
             android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha" />
 
         <ImageButton
+            android:id="@+id/buttonEnd"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonEnd"
             android:src="@drawable/abc_ic_clear_mtrl_alpha"
             android:layout_alignBottom="@+id/textPlayerTurn"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
         <ImageButton
+            android:id="@+id/buttonRedo"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Redo"
-            android:id="@+id/buttonRedo"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/buttonUndo"
             android:layout_toEndOf="@+id/buttonUndo" />
 
         <ImageButton
+            android:id="@+id/buttonUndo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonUndo"
             android:src="@android:drawable/ic_menu_revert"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -78,6 +79,7 @@
             android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
 
         <RelativeLayout
+            android:id="@+id/gameLayout"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@+id/buttonOptions"
@@ -95,7 +97,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/gameBackground2"
-                android:src="@drawable/spmarc"
+                android:src="@drawable/spielbrett_hexa1080"
                 android:visibility="invisible"/>
             <ImageView
                 android:layout_width="fill_parent"
@@ -109,7 +111,9 @@
                 android:id="@+id/gameBackground4"
                 android:src="@drawable/spmarc"
                 android:visibility="invisible"/>
+
         </RelativeLayout>
+
     </RelativeLayout>
 
 </RelativeLayout>
