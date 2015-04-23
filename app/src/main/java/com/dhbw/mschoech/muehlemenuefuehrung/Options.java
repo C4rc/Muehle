@@ -1,5 +1,6 @@
 package com.dhbw.mschoech.muehlemenuefuehrung;
 
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -9,8 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
+
+import javax.xml.datatype.Duration;
 
 
 public class Options extends ActionBarActivity {
@@ -20,7 +24,9 @@ public class Options extends ActionBarActivity {
         ActivityRegistry.register(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
-
+System.out.println("Option");
+        Toast toast = Toast.makeText(this.getApplicationContext(), "Furznase", Toast.LENGTH_LONG);
+        toast.show();
         //do shit
         start();
 
@@ -33,9 +39,6 @@ public class Options extends ActionBarActivity {
         final String source = intent.getStringExtra("source");
         final String field = intent.getStringExtra("Field");
         final Button butBack = (Button) findViewById(R.id.buttonBack);
-
-       // final ImageButton imgButton1 = (ImageButton) findViewById(R.id.imageButtonLightToken);
-       // ImageButton imgButton2 = (ImageButton) findViewById(R.id.imageButtonDarkToken);
 
         System.out.println(source);
         System.out.println(field);

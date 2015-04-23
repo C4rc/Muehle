@@ -24,15 +24,79 @@ public class Main extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        start();
+        setup();
     }
 
 
-    private void start(){
+    private void setup(){
 
+        //set uo Buttons and initialize listeners
+        butActStart();
+        butActOptions();
+        butActCredits();
+        endDialog();
+
+
+    }
+    public void butActStart(){
         final Button butStart = (Button) findViewById(R.id.buttonFields);
+        final Intent intStart = new Intent(this, Start.class);
+
+        butStart.setOnClickListener(
+                new Button.OnClickListener() {
+
+                    public void onClick(View v) {
+                        startActivity(intStart);
+                    }
+                }
+        );
+
+    }
+    public void butActOptions(){
         final Button butOptions = (Button) findViewById(R.id.buttonOptions);
+        final Intent intOptions = new Intent(this, Options.class);
+        butOptions.setOnClickListener(
+                new Button.OnClickListener() {
+
+                    public void onClick(View v) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Furznase", Toast.LENGTH_LONG);
+                        toast.show();
+                        intOptions.putExtra("source", "main");
+                        startActivity(intOptions);
+                    }
+                }
+        );
+
+    }
+    public void butActCredits(){
         final Button butCredits = (Button) findViewById(R.id.buttonCredits);
+        final Intent intCredits = new Intent(this, CreditsBackUp.class);
+        butCredits.setOnClickListener(
+                new Button.OnClickListener() {
+
+                    public void onClick(View v) {
+                        //startActivity(intCredits);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Furznase", Toast.LENGTH_LONG);
+                        toast.show();
+                        showCredits();
+                    }
+                }
+        );
+    }
+    public void butActBack(){
+        final Button butBack = (Button) findViewById(R.id.buttonBack);
+        final Intent intent     = new Intent(this, Main.class);
+
+        butBack.setOnClickListener(
+                new Button.OnClickListener(){
+
+                    public void onClick(View v) {
+                        startActivity(intent);
+                    }
+                }
+        );
+    }
+    public void endDialog(){
         final ImageButton butEnd = (ImageButton) findViewById(R.id.buttonEnd);
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
 
@@ -54,39 +118,6 @@ public class Main extends ActionBarActivity {
                 });
 
         final AlertDialog helpDialog = helpBuilder.create();
-
-        final Intent intStart = new Intent(this, Start.class);
-        final Intent intOptions = new Intent(this, Options.class);
-        final Intent intCredits = new Intent(this, Credits.class);
-
-        butStart.setOnClickListener(
-                new Button.OnClickListener() {
-
-                    public void onClick(View v) {
-                        startActivity(intStart);
-                    }
-                }
-        );
-
-        butOptions.setOnClickListener(
-                new Button.OnClickListener() {
-
-                    public void onClick(View v) {
-                        intOptions.putExtra("source", "main");
-                        startActivity(intOptions);
-                    }
-                }
-        );
-
-        butCredits.setOnClickListener(
-                new Button.OnClickListener() {
-
-                    public void onClick(View v) {
-                        startActivity(intCredits);
-                    }
-                }
-        );
-
         butEnd.setOnClickListener(
                 new Button.OnClickListener(){
 
@@ -96,15 +127,23 @@ public class Main extends ActionBarActivity {
                     }
                 }
         );
+    }
+
+    public void showCredits(){
+        setContentView(R.layout.activity_credits);
+        butActBack();
 
     }
+
+
+
+    //****Generic stuff*************************************//
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -119,4 +158,7 @@ public class Main extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //*****************************************************//
+
+
 }

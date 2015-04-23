@@ -11,7 +11,7 @@ import android.widget.*;
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
 
-public class Credits extends ActionBarActivity {
+public class CreditsBackUp extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
