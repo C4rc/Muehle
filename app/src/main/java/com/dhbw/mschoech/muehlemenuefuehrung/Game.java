@@ -29,6 +29,7 @@ public class Game extends ActionBarActivity{
     boolean toggle = true;
     short amountToken = 9;
     short zaehler = 0;
+    boolean play = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +41,18 @@ public class Game extends ActionBarActivity{
         //display appropriate Field
         Intent intent = getIntent();
         final String field = intent.getStringExtra("Field");
-        displayBackground(field);
+        FieldPositions fieldPositions = displayBackground(field);
 
-        RelativeLayout layout = (RelativeLayout)(this.findViewById(R.id.layoutGame));
 
-        start(intent, layout);
+
+        start(intent, fieldPositions);
     }
 
-    private void start(Intent i, final RelativeLayout layout){
+    private void start(Intent i, final FieldPositions fieldPositions){
 
         final ImageButton butUndo = (ImageButton) findViewById(R.id.buttonUndo);
         final ImageButton butRedo = (ImageButton) findViewById(R.id.buttonRedo);
-
+        final RelativeLayout gameLayout = (RelativeLayout) (this.findViewById(R.id.gameLayout));
 
         //get data from previous page
         final String player1        = i.getStringExtra("Player 1");
@@ -77,50 +78,97 @@ public class Game extends ActionBarActivity{
             darToken[index] = new Token(Game.this, dark);
         }
 
-        layout.setOnTouchListener(
+        gameLayout.setOnTouchListener(
 
-                new RelativeLayout.OnTouchListener() {
+            new RelativeLayout.OnTouchListener() {
                     short index = 0;
+                    boolean play = false;
+                    float[] coordinates;
 
                     public boolean onTouch(View v, MotionEvent m) {
                         // Perform tasks here
 
-                        if (zaehler % 2 == 0) {
-                            if (toggle) {
-                                token = ligToken[index];
-                                texPlayer.setText(player2);
-                            } else {
-                                token = darToken[index];
-                                texPlayer.setText(player1);
 
-                                if (index < amountToken - 1) {
-                                    index++;
-                                } else if (!toggle) {
-                                    index = 0;
+                        short posx = (short)m.getX();
+                        short posy = (short)m.getY();
+
+                        if(!play) {
+
+
+
+
+                            if (zaehler % 2 == 0) {
+
+                                if (toggle) {
+                                    token = ligToken[index];
+                                    texPlayer.setText(player2);
+
+                                } else {
+                                    token = darToken[index];
+                                    texPlayer.setText(player1);
+
+                                    if (index < amountToken - 1) {
+                                        index++;
+                                    } else if (!toggle) {
+                                        play = true;
+                                    }
                                 }
-                            }
 
-                            toggle = !toggle;
+                                toggle = !toggle;
+
+
+                            }
+                            zaehler++;
+                        }else{
+
+                            //play(texPlayer, m.getX());
+                        }
+
+                        texPlayer.setText("W: " + gameLayout.getWidth() + "H: " + gameLayout.getHeight());
+                        texStep.setText("PosX:  " + m.getX() + " PosY: " + m.getY());
+                        //token.setxPos(( (int) m.getX() - 30 ) );
+                        //token.setyPos(( (int) m.getY() - 30 ) );
+                        //token.setxPos(gameLayout.getWidth()*84/100);
+                        //token.setyPos(gameLayout.getHeight()*76/100);
+
+/*
+                        if(posx < (gameLayout.getWidth()  * 8 / 100) && posy < (gameLayout.getHeight()  * 20 / 100)){
+
+
+                            token.setxPos(gameLayout.getWidth()  * fieldPositions.positions[0][0][0] / 100);
+                            token.setyPos(gameLayout.getHeight() * fieldPositions.positions[0][0][1] / 100);
 
                         }
-                        zaehler++;
-                        token.setxPos((int) m.getX() - 30);
-                        token.setyPos((int) m.getY() - 30);
 
-                        texStep.setText("T: " + toggle);
-                        layout.removeView(token);
-                        layout.addView(token);
+  */                      //texStep.setText("X: " + fieldPositions.field[0][0][0] + " Y: " + feld.field[0][0][1]);
+
+
+                        coordinates = fieldPositions.compare(posx * 100 / gameLayout.getWidth(), posy * 100 / gameLayout.getHeight());
+                        if (coordinates[0] != 0){
+                            token.setxPos(gameLayout.getWidth()  * coordinates[0] / 100);
+                            token.setyPos(gameLayout.getHeight() * coordinates[1] / 100);
+                        }
+                        gameLayout.removeView(token);
+                        gameLayout.addView(token);
+
+
 
                         return true;
                     }
                 }
         );
-/************************************************/
 
     }
 
 
-/****Generic**Stuff****************************************************************/
+
+    private void play(TextView texPlayer, float pos) {
+
+        texPlayer.setText("text");
+    }
+
+
+    /****Generic**Stuff****************************************************************/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -143,21 +191,24 @@ public class Game extends ActionBarActivity{
     }
 /**********************************************************************************/
 
-    public void displayBackground(String field){
+    public FieldPositions displayBackground(String field){
         //static value
 
         switch (field) {
-            case "field1": setContentView(R.layout.activity_game_field1);
-                break;
-            case "field2": setContentView(R.layout.activity_game_field2);
-                break;
-            case "field3": setContentView(R.layout.activity_game_field3);
-                break;
-            case "field4": setContentView(R.layout.activity_game_field4);
-                break;
+            case "field1":  setContentView(R.layout.activity_game_field1);
+                            FieldPositions fieldpos = new Field1pos();
+                            return fieldpos;
+
+            case "field2":  setContentView(R.layout.activity_game_field2);
+                            break;
+            case "field3":  setContentView(R.layout.activity_game_field3);
+                            break;
+            case "field4":  setContentView(R.layout.activity_game_field4);
+                            break;
 
         }
 
+        return null;
     }
 
     private void endDialog(){
@@ -221,8 +272,8 @@ public class Game extends ActionBarActivity{
     }
 
     private class Token extends View {
-        int xPos = 0;
-        int yPos = 0;
+        float xPos = 0;
+        float yPos = 0;
         int width;
         int height;
 
@@ -250,16 +301,16 @@ public class Game extends ActionBarActivity{
         }
 
         /***GETTER**SETTER****************/
-        public int getxPos() {
+        public float getxPos() {
             return xPos;
         }
-        public void setxPos(int xPos) {
+        public void setxPos(float xPos) {
             this.xPos = xPos;
         }
-        public int getyPos() {
+        public float getyPos() {
             return yPos;
         }
-        public void setyPos(int yPos) {
+        public void setyPos(float yPos) {
             this.yPos = yPos;
         }
         public void setwidth(int width) {

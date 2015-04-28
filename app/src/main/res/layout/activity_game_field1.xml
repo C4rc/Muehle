@@ -56,16 +56,28 @@
             android:text="Redo"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/buttonUndo"
-            android:layout_toEndOf="@+id/buttonUndo" />
+            android:src="@drawable/icon_redo_100"
+            android:background="#ff000000"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_toStartOf="@+id/textNextStep"
+            android:layout_alignTop="@+id/buttonUndo"
+            android:layout_toLeftOf="@+id/textNextStep" />
+
 
         <ImageButton
             android:id="@+id/buttonUndo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@drawable/icon_undo_100"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_toStartOf="@+id/buttonOptions"
+            android:background="#ff000000"
+            android:layout_toLeftOf="@+id/buttonOptions" />
 
         <ImageButton
             style="?android:attr/buttonStyleSmall"
@@ -78,22 +90,24 @@
             android:layout_alignParentStart="true"
             android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
 
+
         <RelativeLayout
-            android:id="@+id/gameLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/buttonOptions"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/buttonRedo">
+                    android:id="@+id/gameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
 
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/gameBackground1"
-                android:src="@drawable/spielbrett1080"/>
-           
-
+                android:src="@drawable/spielbrett1080"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
 
         <TextView
