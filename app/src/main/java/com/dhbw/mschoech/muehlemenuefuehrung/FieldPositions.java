@@ -5,9 +5,12 @@ package com.dhbw.mschoech.muehlemenuefuehrung;
  */
 public abstract class FieldPositions {
     float positions[][][];
+    short placed [][];
 
-    public float[] compare(int x, int y){
+    public float[] compare(int x, int y, boolean toggle){
         return null;
     }
-    public void field(){}
+    public void field(int width){}
+
+    public abstract boolean threeInARow();
 }

@@ -9,8 +9,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -23,13 +23,12 @@ import android.widget.TextView;
 import com.dhbw.mschoech.muehlemenuefuehrung.util.ActivityRegistry;
 
 
+public class GameBackup extends ActionBarActivity{
+    public Token token = null;
+    boolean toggle = true;
+    short amountToken = 9;
+    boolean play = false;
 
-public class Game extends ActionBarActivity{
-    public static Token token = null;
-    static boolean toggle = true;
-    static short amountToken = 3;
-    static short play = 0;
-    static short gamestate = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,32 +87,12 @@ public class Game extends ActionBarActivity{
         final Token darToken[] = new Token[amountToken];
 
         for ( int index = 0; index < amountToken; index++){
-            ligToken[index] = new Token(Game.this, light);
-            darToken[index] = new Token(Game.this, dark);
+            ligToken[index] = new Token(GameBackup.this, light);
+            darToken[index] = new Token(GameBackup.this, dark);
         }
 
-        gameLayout.setOnTouchListener(
-                new RelativeLayout.OnTouchListener() {
-                    public boolean onTouch(View v, MotionEvent m) {
-                        short tokenCounter = 0;
-                        if (m.getAction() == MotionEvent.ACTION_DOWN ) {
-                            switch (play) {
-                                case 0:
-                                    GameFuncs.gamestate_set(gameLayout, m, tokenCounter, fieldPositions, texPlayer, texStep, ligToken, darToken, player1, player2);
-                                    break;
-                                case 1:
-                                    GameFuncs.gamestate_play(gameLayout, m, fieldPositions, texPlayer, texStep, ligToken, darToken, player1, player2);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        return true;
-                    }
-                }
-        );
-    }
 
+    }
 
 
     /****Generic**Stuff****************************************************************/

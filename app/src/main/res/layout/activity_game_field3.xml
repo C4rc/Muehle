@@ -36,17 +36,19 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/buttonHome"
             android:layout_toEndOf="@+id/buttonHome"
-            android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha" />
+            android:src="@drawable/icon_settings_50"
+            android:background="#ff000000" />
 
         <ImageButton
             android:id="@+id/buttonEnd"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/abc_ic_clear_mtrl_alpha"
+            android:src="@drawable/icon_exit_50"
             android:layout_alignBottom="@+id/textPlayerTurn"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:background="#ff000000" />
 
         <ImageButton
             android:id="@+id/buttonRedo"
@@ -56,16 +58,19 @@
             android:text="Redo"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/buttonUndo"
-            android:layout_toEndOf="@+id/buttonUndo" />
+            android:layout_toEndOf="@+id/buttonUndo"
+            android:src="@drawable/icon_redo_50"
+            android:background="#ff000000" />
 
         <ImageButton
             android:id="@+id/buttonUndo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@drawable/icon_undo_50"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:background="#ff000000" />
 
         <ImageButton
             style="?android:attr/buttonStyleSmall"
@@ -76,7 +81,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
+            android:src="@drawable/icon_menu_50"
+            android:background="#ff000000" />
 
         <RelativeLayout
             android:id="@+id/gameLayout"

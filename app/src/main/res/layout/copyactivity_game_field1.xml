@@ -94,10 +94,18 @@
             android:layout_above="@+id/buttonRedo">
 
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gameBackground3"
+                android:src="@drawable/spielbrett1080"
+                android:paddingBottom="0dp"
+                android:padding="0dp"
+                android:layout_alignParentTop="true" />
+
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/gameBackground3"
-                android:src="@drawable/spielbrett_hexa1080"/>
+                android:layout_alignParentTop="true"></RelativeLayout>
 
 
         </RelativeLayout>
@@ -111,6 +119,7 @@
             android:layout_alignTop="@+id/buttonUndo"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"/>
+
     </RelativeLayout>
 
 </RelativeLayout>
